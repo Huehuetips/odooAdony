@@ -1,28 +1,26 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="tracking_guides.list">
+    <record model="ir.ui.view" id="history_guide_list">
       <field name="name">tracking_guides list</field>
-      <field name="model">tracking_guides.tracking_guides</field>
+      <field name="model">tracking_guides.history_guide</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="name_recip"/>
+          <field name="phone_number"/>
+          <field name="address"/>
+          <field name="description"/>
+          <field name="shipping_details"/>
         </tree>
       </field>
     </record>
--->
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="tracking_guides.action_window">
+    <record model="ir.actions.act_window" id="history_guide_guide_list">
       <field name="name">tracking_guides window</field>
-      <field name="res_model">tracking_guides.tracking_guides</field>
+      <field name="res_model">tracking_guides.history_guide</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
 
     <!-- server action to the one above -->
 <!--
@@ -41,20 +39,13 @@
 -->
 
     <!-- Top menu item -->
-<!--
     <menuitem name="tracking_guides" id="tracking_guides.menu_root"/>
--->
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="tracking_guides.menu_1" parent="tracking_guides.menu_root"/>
-    <menuitem name="Menu 2" id="tracking_guides.menu_2" parent="tracking_guides.menu_root"/>
--->
+    <menuitem name="Lista de Guías" id="tracking_guides.menu_1" parent="tracking_guides.menu_root"/>
+    <!-- <menuitem name="Generar Guías" id="tracking_guides.menu_2" parent="tracking_guides.menu_root"/> -->
     <!-- actions -->
-<!--
     <menuitem name="List" id="tracking_guides.menu_1_list" parent="tracking_guides.menu_1"
-              action="tracking_guides.action_window"/>
-    <menuitem name="Server to list" id="tracking_guides" parent="tracking_guides.menu_2"
-              action="tracking_guides.action_server"/>
--->
+              action="history_guide_guide_list"/>
+    <!-- <menuitem name="Server to list" id="tracking_guides" parent="tracking_guides.menu_2" action="tracking_guides.action_server"/> -->
   </data>
 </odoo>

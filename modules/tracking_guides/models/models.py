@@ -1,19 +1,27 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields
 
 
-# class tracking_guides(models.Model):
-#     _name = 'tracking_guides.tracking_guides'
-#     _description = 'tracking_guides.tracking_guides'
+class history_guide(models.Model):
+    _name = 'tracking_guides.history_guide'
+    _description = 'tracking_guides.history_guide'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+    name_recip = fields.Char(string="Destinatario")
+    phone_number = fields.Char(string="Número de teléfono")
+    address = fields.Text(string="Dirección de entrega")
+    description = fields.Text("Descripción de entrega")
+    shipping_details = fields.Text()
 
+
+class shipping_details(models.Model):
+    _name = 'tracking_guides.shipping_details'
+    _description = 'tracking_guides.shipping_details'
+    
+    selection_shipping_type = [
+        ('sobre', '1'),
+        ('caja', '2'),
+    ]
+    pieces = fields.Integer(string="Cantidad de piezas")
+    shipping_type = fields.Selection(selection_shipping_type, string="Tipo de envío")
+    weight = fields.Float(string="Peso")
