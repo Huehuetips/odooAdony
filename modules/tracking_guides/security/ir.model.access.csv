@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tracking_guides_tracking_guides,tracking_guides.tracking_guides,model_tracking_guides_tracking_guides,base.group_user,1,1,1,1
