@@ -10,12 +10,38 @@
           <field name="phone_number"/>
           <field name="address"/>
           <field name="description"/>
-          <field name="shipping_details"/>
+          <field name="shipping_details_ids"/>
         </tree>
       </field>
     </record>
 
-    <!-- actions opening views on models -->
+    <record model="ir.ui.view" id="history_guide_form_view">
+      <field name="name">history.guide.form</field>
+      <field name="model">tracking_guides.history_guide</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name_recip"/>
+              <field name="phone_number"/>
+              <field name="address"/>
+              <field name="description"/>
+            </group>
+            <group class="col-md-6">
+              <field name="shipping_details_ids">
+                <tree editable="bottom">
+                  <field name="pieces"/>
+                  <field name="shipping_type"/>
+                  <field name="weight"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+        <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="history_guide_guide_list">
       <field name="name">tracking_guides window</field>
       <field name="res_model">tracking_guides.history_guide</field>
