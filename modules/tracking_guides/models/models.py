@@ -30,8 +30,8 @@ class history_guide(models.Model):
             # Manejo de errores, mostrar mensaje de error
             return {
                 'warning': {
-                    'title': _("Error"),
-                    'message': _("La llamada a la API falló."),
+                    'title': ("Error"),
+                    'message': ("La llamada a la API falló."),
                 }
             }
 
