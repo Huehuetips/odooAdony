@@ -22,7 +22,7 @@ class shipping_details(models.Model):
     selection_shipping_type = [
         ('1', 'Sobre'),
         ('2', 'Caja'),
-        ]
+    ]
     pieces = fields.Integer(string="Cantidad de piezas")
     shipping_type = fields.Selection(selection_shipping_type, string="Tipo de envío", default='2')
     weight = fields.Float(string="Peso (Lb)")

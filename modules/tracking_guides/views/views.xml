@@ -1,9 +1,9 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-    <record model="ir.ui.view" id="tracking_guides.list">
+    <record model="ir.ui.view" id="tracking_guides_list">
       <field name="name">tracking_guides list</field>
-      <field name="model">tracking_guides.tracking_guides</field>
+      <field name="model">tracking_guides.history_guide</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name_recip"/>
@@ -26,7 +26,7 @@
               <field name="name_recip"/>
               <field name="phone_number"/>
               <field name="address"/>
-              <!-- <field name="description"/> -->
+              <field name="description"/>
             </group>
             <group>
               <field name="shipping_details_ids">
@@ -42,35 +42,17 @@
       </field>
     </record>
     <!-- actions opening views on models -->
-<!--
     <record model="ir.actions.act_window" id="tracking_guides.action_window">
-      <field name="name">tracking_guides window</field>
-      <field name="res_model">tracking_guides.tracking_guides</field>
+      <field name="name">Tracking de Guías</field>
+      <field name="res_model">tracking_guides.history_guide</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="tracking_guides.action_server">
-      <field name="name">tracking_guides server</field>
-      <field name="model_id" ref="model_tracking_guides_tracking_guides"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
 
     <!-- Top menu item -->
     <menuitem name="tracking_guides" id="tracking_guides.menu_root"/>
     <!-- menu categories -->
-    <menuitem name="lIST" id="tracking_guides.menu_1" parent="tracking_guides.menu_root"
-              action="tracking_guides.action_window"/>
+    <menuitem name="lIST" id="tracking_guides.menu_1" parent="tracking_guides.menu_root" action="tracking_guides.action_window"/>
 
   </data>
 </odoo>
