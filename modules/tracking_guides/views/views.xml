@@ -10,34 +10,32 @@
           <field name="phone_number"/>
           <field name="address"/>
           <field name="description"/>
-          <field name="shipping_details"/>
+          <field name="shipping_details_ids"/>
         </tree>
       </field>
     </record>
+
     <record model="ir.ui.view" id="history_guide_form_view">
       <field name="name">history.guide.form</field>
       <field name="model">tracking_guides.history_guide</field>
       <field name="arch" type="xml">
-        <form auto_save="false">
+        <form>
           <sheet>
             <group>
               <field name="name_recip"/>
               <field name="phone_number"/>
               <field name="address"/>
-              <field name="description"/>
+              <!-- <field name="description"/> -->
             </group>
-            <group class="col-5   ">
+            <group>
               <field name="shipping_details_ids">
                 <tree editable="bottom">
-                  <field name="shipping_type" class="o_field_widget"/>
-                  <field name="pieces" class="o_field_widget" autofocus="1"/>
-                  <field name="weight" class="o_field_widget"/>
+                  <field name="pieces"/>
+                  <field name="shipping_type"/>
+                  <field name="weight"/>
                 </tree>
               </field>
             </group>
-            <!-- <footer> -->
-              <!-- <button name="call_api_and_save" type="object" string="Llamar API y Guardar" class="btn-primary"/> -->
-            <!-- </footer> -->
           </sheet>
         </form>
       </field>
