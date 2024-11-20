@@ -10,11 +10,10 @@
           <field name="phone_number"/>
           <field name="address"/>
           <field name="description"/>
-          <field name="shipping_details_ids"/>
+          <field name="shipping_details"/>
         </tree>
       </field>
     </record>
-
     <record model="ir.ui.view" id="history_guide_form_view">
       <field name="name">history.guide.form</field>
       <field name="model">tracking_guides.history_guide</field>
@@ -43,8 +42,7 @@
         </form>
       </field>
     </record>
-
-        <!-- actions opening views on models -->
+    <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="history_guide_guide_list">
       <field name="name">tracking_guides window</field>
       <field name="res_model">tracking_guides.history_guide</field>
