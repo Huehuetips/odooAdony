@@ -1,55 +1,57 @@
 <odoo>
-    <data>
-        <record id="view_history_guide_form" model="ir.ui.view">
-          <field name="name">history.guide.form</field>
-          <field name="model">tracking_guide.history_guide</field>
-          <field name="arch" type="xml">
-            <form string="Guía de Historia">
-              <sheet>
-                <group>
-                  <field name="name_recip"/>
-                  <field name="phone_number"/>
-                  <field name="address"/>
-                  <field name="description"/>
-                </group>
-                <group class="col-6">
-                  <field name="shipping_details_ids" widget="one2many_list">
-                    <tree editable="bottom" create="true" delete="true" class="o_field_widget">
-                      <field name="shipping_type" required="True" class="o_field_widget"/>
-                      <field name="pieces" required="True" class="o_field_widget"/>
-                      <field name="weight" required="True" class="o_field_widget"/>
-                    </tree>
-                  </field>
-                </group>
-                <button name="call_api_and_save" type="object" string="Llamar API y Guardar" class="btn-primary" options="{'no_create': True}"/>
-              </sheet>
-            </form>
-          </field>
-        </record>
+  <data>
 
-        <record id="view_history_guide_tree" model="ir.ui.view">
-          <field name="name">Listado de Guías</field>
-          <field name="model">tracking_guide.history_guide</field>
-          <field name="arch" type="xml">
-            <tree string="Listado de Guías">
-              <field name="id"/>
+    <record id="view_history_guide_form" model="ir.ui.view">
+      <field name="name">history.guide.form</field>
+      <field name="model">tracking_guide.history_guide</field>
+      <field name="arch" type="xml">
+        <form string="Guía de Historia">
+          <sheet>
+            <group>
               <field name="name_recip"/>
               <field name="phone_number"/>
               <field name="address"/>
               <field name="description"/>
-              <field name="create_date" string="Fecha de Creación"/>
-              <field name="shipping_details_ids"/>
-            </tree>
-          </field>
-        </record>
+            </group>
+            <group class="col-6">
+              <field name="shipping_details_ids" widget="one2many_list" class="col-6" required="True">
+                <tree editable="bottom" create="true" delete="true" class="o_field_widget col-6" required="True">
+                  <field name="shipping_type" required="True" class="o_field_widget"/>
+                  <field name="pieces" required="True" class="o_field_widget"/>
+                  <field name="weight" required="True" class="o_field_widget"/>
+                </tree>
+              </field>
+            </group>
+            <button name="call_api_and_save" type="object" string="Llamar API y Guardar" class="btn-primary" options="{'no_create': True}"/>
+          </sheet>
+        </form>
+      </field>
+    </record>
 
-        <record id="action_history_guide" model="ir.actions.act_window">
-            <field name="name">Guías de Historia</field>
-            <field name="res_model">tracking_guide.history_guide</field>
-            <field name="view_mode">tree,form</field>
-        </record>
+    <record id="view_history_guide_tree" model="ir.ui.view">
+      <field name="name">Listado de Guías</field>
+      <field name="model">tracking_guide.history_guide</field>
+      <field name="arch" type="xml">
+        <tree string="Listado de Guías">
+          <field name="id"/>
+          <field name="name_recip"/>
+          <field name="phone_number"/>
+          <field name="address"/>
+          <field name="description"/>
+          <field name="create_date" string="Fecha de Creación"/>
+          <field name="shipping_details_ids"/>
+        </tree>
+      </field>
+    </record>
 
-        <menuitem id="menu_tracking_guide" name="Tracking Guide" sequence="10"/>
-        <menuitem id="menu_history_guide" name="Guías de Historia" parent="menu_tracking_guide" action="action_history_guide" sequence="10"/>
-    </data>
+    <record id="action_history_guide" model="ir.actions.act_window">
+        <field name="name">Guías de Historia</field>
+        <field name="res_model">tracking_guide.history_guide</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tracking_guide" name="Tracking Guide" sequence="10">
+      <menuitem id="menu_history_guide" name="Guías de Historia" action="action_history_guide" sequence="10"/>
+    </menuitem>
+  </data>
 </odoo>
