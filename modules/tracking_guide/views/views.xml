@@ -14,7 +14,7 @@
               <field name="description"/>
             </group>
             <group class="col-6">
-              <field name="shipping_details_ids" widget="one2many_list" class="col-6" required="True">
+              <field name="shipping_details_ids" class="col-6" required="True">
                 <tree editable="bottom" create="true" delete="true" class="o_field_widget col-6" required="True">
                   <field name="shipping_type" required="True" class="o_field_widget"/>
                   <field name="pieces" required="True" class="o_field_widget"/>
@@ -22,7 +22,8 @@
                 </tree>
               </field>
             </group>
-            <button name="call_api_and_save" type="object" string="Llamar API y Guardar" class="btn-primary" options="{'no_create': True}"/>
+            <button name="call_api_and_save" type="object" string="Guardar" class="btn-primary" options="{'no_create': True}"/>
+            <!-- <button name="%(action_confirm_wizard)d" string="Llamar API y Guardar" type="action" class="btn-primary"/> -->
           </sheet>
         </form>
       </field>

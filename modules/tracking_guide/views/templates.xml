@@ -21,4 +21,9 @@
         </template>
 -->
     </data>
+    <!-- <template id="assets_backend" name="tracking_guide assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/tracking_guide/static/src/js/disable.js"></script>
+        </xpath>
+    </template> -->
 </odoo>

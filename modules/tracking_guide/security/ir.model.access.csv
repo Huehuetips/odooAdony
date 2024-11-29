@@ -1,3 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_tracking_guide_history_guide,tracking_guide.history_guide,model_tracking_guide_history_guide,base.group_user,1,0,1,1
 access_tracking_guide_shipping_details,tracking_guide.shipping_details,model_tracking_guide_shipping_details,base.group_user,1,1,1,1
+access_tracking_guide_confirm.wizard,confirm.wizard,model_confirm_wizard,base.group_user,1,1,1,1
+access_confirm_wizard,access.confirm.wizard,model_confirm_wizard,,1,1,1,1
+access_history_guide,access.history.guide,model_tracking_guide_history_guide,,1,1,1,1

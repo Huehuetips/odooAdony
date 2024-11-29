@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "tracking_guide",
+    'name': 'Tracking Guide',
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 
     'description': """
 Long description of module's purpose
     """,
+    
+    "license": "LGPL-3",
 
     'author': "My Company",
     'website': "https://www.yourcompany.com",
@@ -15,14 +17,15 @@ Long description of module's purpose
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '0.1',
+    'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'web'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/wizard.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
@@ -32,9 +35,9 @@ Long description of module's purpose
     ],
     'assets': {
         'web.assets_backend': [
-            # './static/src/js/disable_autosave.js'
-            './disable_autosabe.js'
+            # 'web/static/src/js/core.js',  # Asegúrate de incluir estas dependencias
+            # 'web/static/src/js/form_controller.js',
+            'tracking_guide/static/src/js/disable.js',
         ],
     },
 }
-
